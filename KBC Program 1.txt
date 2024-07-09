@@ -1,0 +1,38 @@
+qus = ["Capital of India", "whats 2x2", "capital of MP",]
+ans = ["Delhi", "4", "Bhopal"]
+
+print("Welcome to Kaun Banega Crorepati - ")
+req = int(input("Are you ready?\nPress 1 for yess\nPress 2 for no\n"))
+if (req==1):
+    print("alright \nyou will get 500Rs per Right question\n---------------------Lets goo----------------------- \n")
+    
+    print("Question No. 1 What is the ", qus[0])
+    q1 = int(input("Press 1 for mumbai \nPress 2 for delhi \nPress 3 for kolkata \nPress 4 for tamil nadu \n==================== "))
+    if (q1==2):
+        print("congrats, you won 500")
+        print("\n")
+        print("Question No. 2",qus[1])
+        q2 = int(input("Press 1 for 2 \nPress 2 for 5 \nPress 3 for 4 \nPress 4 for 8\n===================="))
+        if (q2==3):
+            print("congrats you won 1000")
+            print("\n")
+            print("Question No. 3",qus[2])
+            q3 = int(input("Press 1 for indore \nPress 2 for jabapur \nPress 3 for sagar \nPress 4 for bhopal\n===================="))
+            if (q3==4):
+                print("congrats you have completed the KBC and  won Complete 1500Rs cash!!!")
+        else :
+            print("you lost try again!")
+    
+    else :
+        print("you lost try again!")
+            
+else:
+    print("You should be ready bro.. its about money")
+
+
+
+    
+
+
+
+

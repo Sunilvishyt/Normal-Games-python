@@ -1,0 +1,40 @@
+import random
+import hangman_words
+import hangman_stages
+
+print(hangman_words.logo)
+chosen_word = random.choice(hangman_words.fruits)
+display = []
+
+for word in chosen_word:
+    display += "_"
+
+lives = 6
+print(display)
+
+while "_" in display:
+    guess = input("Guess a word : ")
+    if guess in display:
+        print("you have already guessed that bro...")
+        
+    for position in range(len(chosen_word)):
+        letter = chosen_word[position]
+        
+        if letter == guess:
+            display[position] = guess
+            if "_" not in display:
+                print(f"{hangman_words.congrats} congo you won!")
+                break
+            
+    if guess not in chosen_word:
+        lives -= 1
+        print("The letter you guessed is not the right one bro.. (life is deducted)")
+        if lives == 0:
+            print("oops you have lost bro")
+            print(hangman_words.lose)
+            print (hangman_stages.stages[lives])
+            break
+    
+    print(display)
+    print (hangman_stages.stages[lives])
+# print("congrats you did it!")

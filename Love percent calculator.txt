@@ -1,0 +1,40 @@
+print("The Love Calculator is calculating your score...")
+name1 = input() # What is your name?
+name2 = input() # What is their name?
+# 🚨 Don't change the code above 👆
+# Write your code below this
+
+name3 = (f"{name1}{name2}") 
+name3 = name3.lower()
+# print(name3)
+
+first = name3.count('t')
+firsta = name3.count('r')
+firstb = name3.count('u')
+firstc = name3.count('e')
+
+finalfirst = (first + firsta + firstb + firstc)
+# print(first + firsta + firstb + firstc)
+
+second = name3.count('l')
+seconda = name3.count('o')
+secondb = name3.count('v')
+secondc = name3.count('e')
+
+finalsecond = (second + seconda + secondb + secondc)
+
+finalscore = int((f"{finalfirst}{finalsecond}"))
+
+if finalscore < 10:
+  print(f"Your score is {finalscore}, you go together like coke and mentos.")
+
+elif finalscore > 90:
+  print(f"Your score is {finalscore}, you go together like coke and mentos.")
+  #we can also use 'or' function like 'and' in between 10 and 90 that will work also similar 
+elif finalscore > 40 and finalscore < 50:
+  print(f"Your score is {finalscore}, you are alright together.")
+
+else:
+  print(f"Your score is {finalscore}.")
+
+# print(f"Your score is {name1score}{name2score}.")

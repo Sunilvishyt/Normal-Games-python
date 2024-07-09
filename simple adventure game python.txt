@@ -1,0 +1,90 @@
+print("-----------------welcome to the game!!!!------------")
+print('''
+        )
+       (  (              .^.
+        \) )           .'.^.'.
+         (/          .'.'---'.'.
+        _\)_       .'.'-------'.'.
+       (__)()    .'.'-,=======.-'.'.
+       (_)__)  .'.'---|   |   |---'.'.
+       (__)_),'.'-----|   |   |-----'.'.
+       ()__.'.'-------|___|___|-------'.'.
+       (_.'.'---------------------------'.'.
+       .'.'-------------------------------'.'.
+      """""|====..====.=======.====..====|"""""
+       ()_)|    ||    |.-----.|    ||    |
+       (_)_|    ||    ||     ||    ||    |
+       (...|____||____||_____||____||____|
+      (_)_(|----------| _____o|----------|
+      (_)(_|----------||     ||----------|
+      (__)(|----------||_____||----------|
+      (_)(_|---------|"""""""""|---------|
+      ()()(|--------|"""""""""""|--------|
+Zot-wWUwwuw|wwWWwuu|"""""""""""""|uwuwuuW|wuwwuuwu
+
+This was you house but suddenly you woke up and see you are not there
+-------------------------------------------------------------
+''')
+
+print("You woke up in the middle of an island")
+print('''
+   (_  ( . ) )__                  '.    \   :   /    .'
+     '(___(_____)      __           '.   \  :  /   .'
+                     /. _\            '.  \ : /  .'
+                .--.|/_/__      -----____   _  _____-----
+_______________''.--o/___  \_______________(_)___________
+       ~        /.'o|_o  '.|  ~                   ~   ~
+  ~            |/    |_|  ~'         ~
+               '  ~  |_|        ~       ~     ~     ~
+      ~    ~          |_|O  ~                       ~
+             ~     ___|_||_____     ~       ~    ~
+   ~    ~      .'':. .|_|A:. ..::''.
+             /:.  .:::|_|.\ .:.  :.:\   ~
+  ~         :..:. .:. .::..:  .:  ..:.       ~   ~    ~
+             \.: .:  :. .: ..:: .lcf/
+    ~      ~      ~    ~    ~         ~
+               ~           ~    ~   ~             ~
+        ~         ~            ~   ~                 ~
+   ~                  ~    ~ ~                 ~
+''')
+
+print("----------------------------------------------------")
+
+choice1 = input("Will you shout for help?? Enter yes or no : ")
+if choice1 == "no":
+    print("Nice Decision, because there is no one who will listen")
+    print("-------------")
+    choice2 = input("Do you want to swim back home or make a boat \nType 'swim' to swim\nType 'boat' to make a boat : ")
+    if choice2 == "boat":
+        print("Nice, boat is ready!")
+        print('''
+                 __________
+        /\____;;___\
+       | /         /
+       `. ())oo() .
+        |\(%()*^^()^\
+       %| |-%-------|
+      % \ | %  ))   |
+      %  \|%________|
+ejm97  %%%%
+        ''')
+        print("----------------------------------------------------")
+        choice3 = input("You found a treasure chest during making the boat \nDo you want to open it press yess or no : ")
+        if choice3 == "no":
+            print("Nice Decision ! there was snakes in the chest nothing else")
+            print("----------------------------------------------------")
+            choice4 = input("while you was travelling with you boat you encountered a mermaid and she asked you a question \nHow much percent earth is covered with ocean? \nType values only : ")
+            if choice4 == 71:
+                print("Right answer! if you given the wrong answer she would have killed you!")
+                
+            else:
+                print("oops wrong answer, and she ate you 'Game Over'")
+        else:
+            print("Oops there were snakes in the chest nothing else and they bit you and 'Game Over'")
+        
+    else:
+        print("oops, sharks ate you while you were swimming!")
+    
+else:
+    print("Game over, Sharks listened your voice and ate you!")
+
