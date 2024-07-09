@@ -1,9 +1,107 @@
-import random
-import hangman_words
-import hangman_stages
+logo = ''' 
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/    '''
 
-print(hangman_words.logo)
-chosen_word = random.choice(hangman_words.fruits)
+
+
+
+import random
+from replit import clear
+print(logo)
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+congrats = ('''
+
+
+                                                                       ,d     
+                                                                       88     
+ ,adPPYba,  ,adPPYba,  8b,dPPYba,   ,adPPYb,d8 8b,dPPYba, ,adPPYYba, MM88MMM  
+a8"     "" a8"     "8a 88P'   `"8a a8"    `Y88 88P'   "Y8 ""     `Y8   88     
+8b         8b       d8 88       88 8b       88 88         ,adPPPPP88   88     
+"8a,   ,aa "8a,   ,a8" 88       88 "8a,   ,d88 88         88,    ,88   88,    
+ `"Ybbd8"'  `"YbbdP"'  88       88  `"YbbdP"Y8 88         `"8bbdP"Y8   "Y888  
+                                    aa,    ,88                                
+                                     "Y8bbdP"                                 
+
+
+''')
+fruits = [
+  'apple',
+  'banana',
+  'cherry',
+  'orange',
+  'papaya',
+  'brinjal',
+  'onion',
+  'carrot',
+  'blueberry',
+  'strawberry',
+  'grapes',
+  'mango',
+  'kiwi'
+]
+chosen_word = random.choice(fruits)
 display = []
 
 for word in chosen_word:
@@ -14,27 +112,27 @@ print(display)
 
 while "_" in display:
     guess = input("Guess a word : ")
+    clear()
     if guess in display:
         print("you have already guessed that bro...")
-        
+
     for position in range(len(chosen_word)):
         letter = chosen_word[position]
-        
+
         if letter == guess:
             display[position] = guess
             if "_" not in display:
-                print(f"{hangman_words.congrats} congo you won!")
+                print(f"{congrats} congo you won!")
                 break
-            
+
     if guess not in chosen_word:
         lives -= 1
         print("The letter you guessed is not the right one bro.. (life is deducted)")
         if lives == 0:
             print("oops you have lost bro")
-            print(hangman_words.lose)
-            print (hangman_stages.stages[lives])
+            print (stages[lives])
             break
-    
+
     print(display)
-    print (hangman_stages.stages[lives])
+    print (stages[lives])
 # print("congrats you did it!")
