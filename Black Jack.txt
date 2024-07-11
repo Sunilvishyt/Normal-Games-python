@@ -1,0 +1,67 @@
+import random 
+
+def deal_cards():
+  """"Returns a random card from the deck"""
+  cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+  card = random.choice(cards)
+  return card
+def calculate_score(cards):
+  if sum(cards) == 21 and len(cards) == 2:
+    return 0
+
+  elif 11 in cards and sum(cards) > 21:
+    cards.remove(11)
+    cards.append(1)
+
+  return sum(cards)
+  
+def compare(user_score, comp_score):
+  if user_score == comp_score:
+    return "Its a Draw!"
+  elif comp_score == 0:
+    return "You lost, comp has black Jack"
+  elif user_score == 0:
+    return "You won you have an Black Jack"
+  elif user_score > 21:
+    return "You went over 21, you lose"
+  elif comp_score > 21:
+    return "you won, computer went over 21"
+  elif user_score > comp_score:
+    return "You win!"
+  else:
+    return "comp won"
+  
+user_cards = []
+comp_cards = []
+for _ in range(2):
+  user_cards.append(deal_cards())
+  comp_cards.append(deal_cards())
+
+gameover = False
+from art import logo
+print(logo) 
+
+while not gameover:
+  user_score = calculate_score(user_cards)
+  comp_score = calculate_score(comp_cards)
+  print(f" Your cards : {user_cards} and your score is {user_score}")
+  print(f" comp first card : {comp_cards[0]} and comp score is {comp_score}")
+  
+  if user_score == 0 or comp_score == 0 or user_score>21:
+      gameover = True
+  
+  else:
+      user_deal = input("Do you want another card , type 'y' or 'n'")
+      if user_deal == 'y':
+        user_cards.append(deal_cards())
+      else:
+        gameover = True
+
+while comp_score != 0 and comp_score < 17:
+  comp_cards.append(deal_cards())
+  comp_score = calculate_score(comp_cards)
+  
+result = compare(user_score, comp_score)
+print(result)
+            
+  
