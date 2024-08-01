@@ -1,0 +1,40 @@
+#guess the number challenge program
+import random
+numb = random.randint(1,100)
+
+def value(attempts):
+  if attempts == 'easy':
+    return 10
+  elif attempts == 'hard':
+    return 5
+
+
+attempts = input("enter the difficulty 'easy'or 'hard': ").lower()
+user_attempts = value(attempts)
+
+
+for i in range(user_attempts):
+  print(f"You have {user_attempts} lifes remaining!")
+  guess = int(input("Guess a Number between 1 to 100 : "))
+  if guess == numb:
+    print("congrats you won!!")
+    break 
+  elif guess <= numb - 10:
+    print("too low")
+  elif guess >= numb + 10:
+    print("Too high")
+  elif guess < numb and guess >= numb - 4:
+    print("just little low")
+  elif guess > numb and guess <= numb + 4:
+    print("just little high")
+  elif guess < numb and guess >= numb - 10:
+    print("too close")
+  elif guess > numb and guess <= numb +10:
+    print("too close")
+
+  user_attempts -= 1
+  
+print(f"the number was {numb}")
+
+
+
